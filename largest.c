@@ -30,5 +30,6 @@ void main(){
        }
    }
    printf("Second largest element in the array is %d",array[slargest]);
+   printf("First largest element in the array is %d ", array[slargest+1]);
 
 }
