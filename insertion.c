@@ -2,17 +2,19 @@
 #include <conio.h>
 
 void insertion(int array[20],int n,int pos,int element){
-      for(int i=n-1;i>=pos;i--){
-           array[i+1]=array[i];
-      }  
-      array[pos]=element;
-      n++;
+ 
+    n++;
+    for(int i=n-2;i>=pos-1;i--)
+    {
+    	array[i+1]=array[i];
+    }
+    array[pos-1]=element;
     printf("Updated  array is:-\n");
     for(int i=0;i<n;i++){
-       printf("%d\t",array[i]);
+    printf("%d\t",array[i]);
    }
 }
-void main(){
+int main(){
    int array[20];
    int n;
    printf("Enter the size of the array:- ");
