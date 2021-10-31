@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-//stack implementing using linked list
+
 struct node{
     char data;
     struct node *next;
 };
+
 int isEmpty(struct node *ptr){
      if(ptr==NULL){
          return 1;
      }
      return 0;
 }
+
 int isFull(){
     struct node *n=(struct node *)malloc(sizeof(struct node));
     if(n==NULL){
@@ -19,6 +21,7 @@ int isFull(){
     }
     return 0;
 }
+
 struct node * push(struct node *ptr,char data){
     if(isFull()){ 
          printf("Stack Overflow'\n");
@@ -31,6 +34,7 @@ struct node * push(struct node *ptr,char data){
     }
 return ptr;
 }
+
 struct node * pop(struct node *ptr,char *poped){
         *poped=ptr->data;
         struct node *pp=ptr;
@@ -39,6 +43,7 @@ struct node * pop(struct node *ptr,char *poped){
         free(pp);
 return ptr;
 }
+
 void display(struct node *ptr){
     if(isEmpty(ptr)){
         printf("Stack Underflow\n");
@@ -51,6 +56,7 @@ void display(struct node *ptr){
         }
     }
 }
+
 void peek(struct node *ptr){
     struct node *pp=ptr;
     int pos;
@@ -66,6 +72,7 @@ void peek(struct node *ptr){
         printf("Element not found with given index\n");
     }
 }
+
 void stackTop(struct node *ptr){
     if(isEmpty(ptr)){
         printf("Stack Overflow\n");
@@ -74,6 +81,7 @@ void stackTop(struct node *ptr){
         printf("Element of the top node is %d\n",ptr->data);
     }
 }
+
 void stackBottom(struct node *ptr){
     struct node *pp=ptr;
     while(pp->next!=NULL){
@@ -81,6 +89,7 @@ void stackBottom(struct node *ptr){
     }
     printf("Element of the buttom node is %d\n",pp->data);
 }
+
 int match(char a,char b){
     if(a=='(' && b==')')
         return 1;
@@ -91,6 +100,7 @@ int match(char a,char b){
     else 
         return 0;
 }
+
 void main(){
     struct node *top=(struct node *)malloc(sizeof(struct node));
     top=NULL;
@@ -117,6 +127,7 @@ void main(){
             }
         }
     }
+    
     if(isEmpty(top)){
         printf("Balanced Expression\n");
     }
