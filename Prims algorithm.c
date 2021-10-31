@@ -7,9 +7,9 @@ int visited[10]= {
 ,min,mincost=0,cost[10][10];
 void main() {
 	
-	printf("\n Enter the number of nodes:");
+	printf("\n Enter the number of nodesis :");
 	scanf("%d",&n);
-	printf("\n Enter the adjacency matrix:\n");
+	printf("\n Enter the adjacency matrix is :\n");
 	for (i=1;i<=n;i++)
 	  for (j=1;j<=n;j++) {
 		scanf("%d",&cost[i][j]);
