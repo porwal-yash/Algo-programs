@@ -1,69 +1,33 @@
-#include<stdio.h>  
-#include<stdlib.h>  
-void insert(int);  
-struct node  
-{  
-    int data;  
-    struct node *left;   
-    struct node *right;   
-};  
-struct node *root;  
-void main ()  
-{  
-    int choice,item;  
-    do   
-    {  
-        printf("\nEnter the item which you want to insert?\n");  
-        scanf("%d",&item);  
-        insert(item);  
-        printf("\nPress 0 to insert more ?\n");  
-        scanf("%d",&choice);  
-    }while(choice == 0);  
-}  
-void insert(int item)  
-{  
-    struct node *ptr, *parentptr , *nodeptr;  
-    ptr = (struct node *) malloc(sizeof (struct node));  
-    if(ptr == NULL)  
-    {  
-        printf("can't insert");  
-    }  
-    else   
-    {  
-    ptr -> data = item;  
-    ptr -> left = NULL;  
-    ptr -> right = NULL;   
-    if(root == NULL)  
-    {  
-        root = ptr;  
-        root -> left = NULL;  
-        root -> right = NULL;  
-    }  
-    else   
-    {  
-        parentptr = NULL;  
-        nodeptr = root;   
-        while(nodeptr != NULL)  
-        {  
-            parentptr = nodeptr;   
-            if(item < nodeptr->data)  
-            {  
-                nodeptr = nodeptr -> left;   
-            }   
-            else   
-            {  
-                nodeptr = nodeptr -> right;  
-            }  
-        }  
-        if(item < parentptr -> data)  
-        {  
-            parentptr -> left = ptr;   
-        }  
-        else   
-        {  
-            parentptr -> right = ptr;   
-        }  
-    }  
-    printf("Node Inserted");  
-    }  
+// Binary Search in C
+
+#include <stdio.h>
+
+int binarySearch(int array[], int x, int low, int high) {
+  // Repeat until the pointers low and high meet each other
+  while (low <= high) {
+    int mid = low + (high - low) / 2;
+
+    if (array[mid] == x)
+      return mid;
+
+    if (array[mid] < x)
+      low = mid + 1;
+
+    else
+      high = mid - 1;
+  }
+
+  return -1;
+}
+
+int main(void) {
+  int array[] = {3, 4, 5, 6, 7, 8, 9};
+  int n = sizeof(array) / sizeof(array[0]);
+  int x = 4;
+  int result = binarySearch(array, x, 0, n - 1);
+  if (result == -1)
+    printf("Not found");
+  else
+    printf("Element is found at index %d", result);
+  return 0;
 }
