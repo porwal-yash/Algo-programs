@@ -7,18 +7,17 @@ int find(int);
 int uni(int,int);
 void main()
 {
-
 printf("\n\n\tImplementation of Kruskal's algorithm\n\n");
 printf("\nEnter the no. of vertices\n");
 scanf("%d",&n);
 printf("\nEnter the cost adjacency matrix\n");
-for(i=1;i<=n;i++)
+for(a=1;a<=n;a++)
 {
 for(j=1;j<=n;j++)
 {
-scanf("%d",&cost[i][j]);
-if(cost[i][j]==0)
-cost[i][j]=999;
+scanf("%d",&cost[a][j]);
+if(cost[a][j]==0)
+cost[a][j]=999;
 }
 }
 printf("\nThe edges of Minimum Cost Spanning Tree are\n\n");
