@@ -131,7 +131,7 @@ int main(){
     printf("4.Dequeue from rear\n");
     printf("5.Display\n");
     printf("6.Exit\n");
-    printf("Enter your choice:- ");
+    printf("--Enter your choice:- ");
     scanf("%d",&choice);
     if(choice==1){
         printf("Enter the element:- ");
