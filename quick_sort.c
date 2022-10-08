@@ -9,7 +9,7 @@ void printarray(int *A,int n){
     printf("\n");
 }
 int partition(int *A,int low,int high){
-    int pivot=A[low],i=low+1,j=high,temp;
+    int pivot=A[low],i=low+1,j=high,temp; //pivot
     do{
     while(A[i]<=pivot){
         i++;
@@ -29,6 +29,10 @@ int partition(int *A,int low,int high){
     return j;
 
 }
+/* The main function that implements QuickSort
+A[] --> Array to be sorted,
+low --> Starting index,
+high --> Ending index */
 void quick_sort(int *A,int low,int high){
    int partitionindex;  // index of pivot after the partition
    if(low<high){
@@ -45,7 +49,7 @@ int main(){
   printf("Before sorting:-\n");
   printarray(A,n);
   quick_sort(A,0,n-1);
-  printf("After sorting\n");
+  printf("After sorting:-\n");
   printarray(A,n);
   return 0;
 }
