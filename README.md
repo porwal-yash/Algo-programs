@@ -35,5 +35,8 @@
 * Quick Sort
 * Recursive Searching in BST
 * Selection Sort
+* Stable Selection Sort
+* Activity Selection
+* Activity Selection Having Unsorted timings 
 
 ### Contributer : [Ankit Nainwal](https://github.com/nano-bot01)
